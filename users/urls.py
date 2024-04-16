@@ -20,12 +20,12 @@ urlpatterns = [
     # Confirm User Info
 
     # JWT Auth
-    path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('auth/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('users/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('users/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
     # Change & Reset Password
     # Profiles
-    path('user-profile/<str:pk>/', UserProfileDetailView.as_view(),  name='user-profile-detail'),
+    path('users/user-profile/<str:pk>/', UserProfileDetailView.as_view(),  name='user-profile-detail'),
 
     # Build context for sign-in
     # how to trigger post update signal  
