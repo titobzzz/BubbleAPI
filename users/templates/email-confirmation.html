@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Email COnfirmation</title>
+    </head>
+    <body>
+        <h1>Hi {{ first_name }},</h1>
+        <p>Account created: Verify your email address </p>
+        
+        <p>
+            In other to start using WispTalkAfica account, 
+            click the link below to verify your email address
+        </p>
+
+        
+        <a 
+            href= "http://{{ domain }}/accounts/confirm-email/{{ uid }}/{{ token}}/"
+        >
+            Confirm Email
+        </a>
+        <p>
+            If you did not make this request, 
+            please ignore this email.
+        </p>
+
+        
+        <p>WispTalkAfrica</p>
+    </body>
+</html>
