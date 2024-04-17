@@ -7,7 +7,7 @@ from users.serializers import BaseUserProfileSerializer
 
 
 class JobSerializer(serializers.ModelSerializer):
-    liked_by = BaseUserProfileSerializer(many=True, read_only=True)
+   
 
     class Meta:
         model = Job

@@ -31,8 +31,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     # Creates a new user object using validated data
     def create(self, validated_data):
-        if validated_data['is_organisation']:
-            validated_data['is_hirer'] = True
 
         user = User.objects.create_user(
             email=validated_data['email'],

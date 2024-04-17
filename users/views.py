@@ -83,9 +83,9 @@ class UserProfileDetailView(generics.RetrieveUpdateAPIView):
         return obj
     
 
-    def patch(self, request, *args, **kwargs):
+    # def patch(self, request, *args, **kwargs):
 
-        return super().patch(request, *args, **kwargs)
+    #     return super().patch(request, *args, **kwargs)
 
    
 

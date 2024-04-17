@@ -12,13 +12,14 @@ User Registration
 Register a new user. Requires username, email, and password fields in the request body.
 User Authentication
 
-## POST /users/auth//login/
+## POST users/login/
 Obtain a JWT token by providing username and password in the request body.
 User Profile
-
-## GET /users/auth//profile/<str:pk>
+## GET users/login/refresh/ 
+for refresh token
+## GET users/user-profile/<str:pk>/
 Retrieve the authenticated user's profile information.
-## UPDATE /api/users/auth/profile/<str:pk>
+## UPDATE users/user-profile/<str:pk>/
 Update the authenticated user's profile information.
 Job Listings
 The jobs app manages job listings, allowing users to view, post, edit, and apply for jobs.
@@ -26,22 +27,24 @@ The jobs app manages job listings, allowing users to view, post, edit, and apply
 ## Endpoints
 Job Listings
 
-## GET /jobs/
+## GET jobs/
 Retrieve a list of all job listings.
-## UPDATE /jobs/
+## POST jobs/
 Post a new job listing. Requires authentication as an employer.
 ## Job Details
 
-## GET /jobs/<job_id>/
+## GET jobs/<str:pk>/
 Retrieve details of a specific job listing.
-## UPDATE /jobs/<job_id>/
+## UPDATE jobs/<str:pk>/
 Update details of a job listing. Requires authentication as the job poster.
-## DELETE /jobs/<job_id>/
+## DELETE jobs/<str:pk>/
 Delete a job listing. Requires authentication as the job poster.
 ## Job Applications
 
-## POST /jobs/<job_id>/apply/
+## POST jobs/<job_id>/apply/
 Apply for a job listing. Requires authentication as a job seeker.
+## UPDATE jobs/<job_id>/apply/<str:pk>
+updates job appplication hireres can use this to change status
 ## Permissions
 Only authenticated users can access most endpoints.
 Job posting, updating, and deletion can only be performed by the user who created the job listing.

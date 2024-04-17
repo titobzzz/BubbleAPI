@@ -75,12 +75,12 @@ class BaseUserProfile(models.Model):
     country = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
-        if self.first_name and self.last_name:
+        if self.user.first_name and self.user.last_name:
             return self.get_fullname()
         return self.user.email
 
     def get_fullname(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.user.first_name} {self.user.last_name}"
 
     def save(self, *args, **kwargs):
         '''

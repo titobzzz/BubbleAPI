@@ -62,10 +62,10 @@ class JobProposalViewSet(viewsets.ModelViewSet):
             return Response("Only creators can update Jobs")
         
         
-    def get_serializer_class(self, request, *args, **kwargs ):
-        if request.method in ["POST","GET","DELETE"]:
-            return super.get_serializer_class()
-        elif request.method in ["UPDATE", "PATCH"]:
+    def get_serializer_class(self ):
+        if self.request.method in ["POST","GET","DELETE"]:
+            return super().get_serializer_class()
+        elif self.request.method in ["UPDATE", "PATCH"]:
 
             return  JobProposalsStatusSerializer
 
